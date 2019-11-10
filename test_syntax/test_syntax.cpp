@@ -113,6 +113,22 @@ void test_thread()
     tid = thread(func, nullptr);
     tid.detach();
 }
+void test_arr()
+{
+    int arr[10]={0};
+    int i = 0;
+
+    for (i=0; i<10; i++){
+        arr[i]=i;
+    }
+
+    /*-----------------------------------------------------------------------------
+     *  arr 和 &arr是不同的,＆arr是数组地址 对其加减法偏移按照arr的大小来算　
+     *  arr是int *，对其加减按照int *来算
+     *-----------------------------------------------------------------------------*/
+    printf("%d\n", *(int *)(arr+5));//  --> arr[5]
+    printf("%d\n", *((int *)(&arr+1) - 1 )); // --> arr[9]
+}
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  main
@@ -123,6 +139,7 @@ int main ( int argc, char *argv[] )
 {
     test_for();
     test_thread();
+    test_arr();
     while (1)
     {
         this_thread::sleep_for(chrono::milliseconds(1000));
