@@ -24,7 +24,7 @@
 #include <typeinfo>
 
 #include <thread>
-#include "../test_io.h"
+#include "test_io.h"
 
 using namespace std;
 
@@ -141,10 +141,11 @@ int main ( int argc, char *argv[] )
 {
 	Test_STL test_stl;
 
-	test_stl.test_map();
+	//test_stl.test_map();
 
     TEST_IO test_io;
-    test_io.test_iostream(cin);
+    //test_io.test_iostream(cin);
+    test_io.test_stringstream();
     test_for();
     //test_thread();
     test_arr();

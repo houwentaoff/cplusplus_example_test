@@ -102,7 +102,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="test_io.cpp" />
+    <ClCompile Include="test_syntax\test_io.cpp" />
     <ClCompile Include="test_syntax\test_stl.cpp" />
     <ClCompile Include="test_syntax\test_syntax.cpp" />
   </ItemGroup>
