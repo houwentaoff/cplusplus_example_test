@@ -24,6 +24,7 @@
 #include <typeinfo>
 
 #include <thread>
+#include "../test_io.h"
 
 using namespace std;
 
@@ -129,6 +130,7 @@ void test_arr()
     printf("%d\n", *(int *)(arr+5));//  --> arr[5]
     printf("%d\n", *((int *)(&arr+1) - 1 )); // --> arr[9]
 }
+#include "test_stl.h"
 /* 
  * ===  FUNCTION  ======================================================================
  *         Name:  main
@@ -137,8 +139,14 @@ void test_arr()
  */
 int main ( int argc, char *argv[] )
 {
+	Test_STL test_stl;
+
+	test_stl.test_map();
+
+    TEST_IO test_io;
+    test_io.test_iostream(cin);
     test_for();
-    test_thread();
+    //test_thread();
     test_arr();
     while (1)
     {
